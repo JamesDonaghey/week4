@@ -17,6 +17,11 @@ public final class Enigma {
         return "Implement the encrypt method";
     }
 
+    public static String CaesarShift(String message, int increment)
+    {
+        return message;
+    }
+
 
     public static String Decrypt(String message, int incrementNumber, List<String> rotors)
     {
