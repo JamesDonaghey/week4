@@ -32,8 +32,14 @@ public final class Enigma {
         for(int i = rotors.size() - 1; i >= 0 ; i--)
         {
             //string rotor = rotors.get(i);
-            System.out.println(rotors.get(i));
-
+            //System.out.println(rotors.get(i));
+            String result = "";
+            for(int j = 0; j < message.length();  j++)
+            {
+                
+                char c = message.charAt(j);
+            }
+            
             /*
             1. Take each character in the message
             2. Find out where it appears in the rotor
