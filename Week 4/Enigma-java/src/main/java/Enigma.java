@@ -7,14 +7,30 @@ import java.util.List;
 public final class Enigma {
 
     public static String Encrypt(String message, int incrementNumber,List<String> rotors ){
-        // TODO - Implement the Encrypt method
-        // Steps in brief
-        // 1. Apply the CAESAR shift using the increment number
-        // 2. For each rotor in the list rotors
-        //  2.1 Translate the message using the rotor
-        // 3. Return the encrypted string
-
-        return "Implement the encrypt method";
+    
+    String result="";
+    
+    for(int i = 0; i < message.length(); i++)
+    {
+    char letter = message.charAt(i);
+    
+    int position = letter - 'A';
+    position = position + incrementNumber;
+      if(position > 25)
+      {
+      position = position - 26;
+      }
+      
+      letter=(char)('A' + position);
+      
+        for(int q = 0; q < rotors.size(); q++)
+        {
+        String rotor = rotors.get(q);
+        letter = rotor.charAt(letter - 'A');
+        }
+        result = result + letter;
+    }
+        return "Implement the encrypt method: " + result;
     }
 
 
