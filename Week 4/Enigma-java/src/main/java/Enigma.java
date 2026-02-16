@@ -28,6 +28,8 @@ public final class Enigma {
         
         // 2. Apply the CAESAR shift
         // 3. Return the decrypted string     
+        int value = 0;
+        value++;
         
         for(int i = rotors.size() - 1; i >= 0 ; i--)
         {
@@ -38,16 +40,20 @@ public final class Enigma {
             {
                 
                 char c = message.charAt(j);
+                // Find the position of the character charAt(j) in the rotor (rotors(i))
+                //int charPos = message.charAt(j);
+                int location = rotors.get(i).indexOf(message.charAt(j));
+                System.out.println(location);
             }
             
             /*
             1. Take each character in the message
             2. Find out where it appears in the rotor
             3. Get the corresonding value in A..Z 
-            4. Add that new character to the output string
+            4. Add that new character to the output string*/
         
         
-        */
+        
 
         }
 
