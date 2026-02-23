@@ -7,6 +7,8 @@
  */
 
 
+using System.Runtime.CompilerServices;
+
 namespace LuciansLusciousLasagna
 {
     public class Lasagna
@@ -19,7 +21,7 @@ namespace LuciansLusciousLasagna
         public int ExpectedMinutesInOven()
         {
             // TODO: Implement the 'ExpectedMinutesInOven()' method
-            throw new NotImplementedException("Please implement the ExpectedMinutesInOven() method");
+            return 40;
 
         }
         /// <summary>
@@ -34,8 +36,10 @@ namespace LuciansLusciousLasagna
         public int RemainingMinutesInOven(int durationInOven)
         {
             // TODO: Implement the 'RemainingMinutesInOven()' method
+            durationInOven = ExpectedMinutesInOven() - durationInOven;
+            return durationInOven;
             throw new NotImplementedException("Please implement the RemainingMinutesInOven() method");
-
+            
 
         }
 
@@ -49,8 +53,10 @@ namespace LuciansLusciousLasagna
         public int PreparationTimeInMinutes(int layers)
         {
             // TODO: implement the 'PreparationTimeInMinutes()' method
+            int preparationTime = layers * 2;
+            return preparationTime;
             throw new NotImplementedException("Please implement the PreparationTimeInMinutes() method");
-
+            
         }
 
         /// <summary>
@@ -67,7 +73,10 @@ namespace LuciansLusciousLasagna
         public int ElapsedTimeInMinutes(int layers, int minutesInOven)
         {
             // TODO: implement the 'ElapsedTimeInMinutes()' method
+            int elapsedTime = PreparationTimeInMinutes(layers) + minutesInOven;
+            return elapsedTime;
             throw new NotImplementedException("Please implement the ElapsedTimeInMinutes() method");
+            
         }
     }
 }
