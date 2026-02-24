@@ -14,6 +14,7 @@
 */
 
 
+using System.Collections.Specialized;
 using System.Runtime.CompilerServices;
 
 namespace annalyns_infiltration;
@@ -48,8 +49,9 @@ public class BirdCount
     /// <exception cref="NotImplementedException"></exception>
     public int Today()
     {
+                return  _birdsPerDay[6];
+
         // TODO: Implement the 'Today()' method
-         return _birdsPerDay[6];
         throw new NotImplementedException("Please implement the BirdCount.Today() method");
     }
 
@@ -62,7 +64,8 @@ public class BirdCount
     {
         // TODO: Implement the 'IncrementTodaysCount()' method
         _birdsPerDay[6]++;
-        throw new NotImplementedException("Please implement the BirdCount.IncrementTodaysCount() method");
+
+        //throw new NotImplementedException("Please implement the BirdCount.IncrementTodaysCount() method");
     }
 
     /// <summary>
@@ -81,7 +84,9 @@ public class BirdCount
                 return true;
             }
         }
-        throw new NotImplementedException("Please implement the BirdCount.HasDayWithoutBirds() method");
+        return false;
+
+        //throw new NotImplementedException("Please implement the BirdCount.HasDayWithoutBirds() method");
     }
 
     /// <summary>
@@ -97,10 +102,11 @@ public class BirdCount
     {
         // TODO: Implement the 'CountForFirstDays()' method
         int count = 0;
-        for (int i = numberOfDays; i < _birdsPerDay.Length; i++)
+        for (int i = 0; i < numberOfDays; i++)
         {
             count = count + _birdsPerDay[i];
         }
+        return count;
         throw new NotImplementedException("Please implement the BirdCount.CountForFirstDays() method");
 
     }
@@ -113,8 +119,16 @@ public class BirdCount
     /// <exception cref="NotImplementedException"></exception>
     public int BusyDays()
     {
-        // TODO: Implement the 'BusyDays()' method
-        throw new NotImplementedException("Please implement the BirdCount.BusyDays() method");
+        int count = 0;
+           for(int i = 0; (i) < _birdsPerDay.Length; (i)++)
+        {
+            
+            if ((_birdsPerDay[i] >= 5))
+            {
+                count++;
+            }
+        }
+           return count;
     }
 
 }
