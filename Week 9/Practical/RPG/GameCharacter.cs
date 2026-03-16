@@ -13,6 +13,7 @@
 */
 
 using System;
+using System.Reflection.Metadata;
 
 namespace RPG
 {
@@ -33,6 +34,24 @@ namespace RPG
         private double _weightLimit; //Must be > 0
         private double _totalWeightOfItems; //Cannot exceed weightLimit
         private int _food; //Must be >=0
+
+        enum CharacterState
+        {
+            Idle,
+            Running,
+            Sleeping,
+            Walking,
+            Defending,
+            Dead
+        }
+
+        //public int foodAmount
+        public int Food
+        {
+            set { _food = value; }
+        }
+
+            
 
         // Class properties
         public string CharacterName
