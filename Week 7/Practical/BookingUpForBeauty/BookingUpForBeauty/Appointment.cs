@@ -35,8 +35,11 @@ namespace BookingUpForBeauty
         /// <exception cref="NotImplementedException"></exception>
         public static DateTime Schedule(string appointmentDateDescription)
         {
-            //TODO: Implement the method as described in the document comments. 
-            throw new NotImplementedException("Please implement the (static) Appointment.Schedule() method");
+            DateTime dateConversion;
+            dateConversion =  DateTime.Parse(appointmentDateDescription);
+
+            return dateConversion;
+            
         }
 
         /// <summary>
@@ -52,8 +55,11 @@ namespace BookingUpForBeauty
         /// <exception cref="NotImplementedException"></exception>
         public static bool HasPassed(DateTime appointmentDate)
         {
-            //TODO: Implement the method as described in the document comments. 
-            throw new NotImplementedException("Please implement the (static) Appointment.HasPassed() method");
+            if (appointmentDate < DateTime.Now)
+            {
+                return true;
+            }
+            return false;
         }
 
         /// <summary>
@@ -69,6 +75,11 @@ namespace BookingUpForBeauty
         /// <exception cref="NotImplementedException"></exception>
         public static bool IsAfternoonAppointment(DateTime appointmentDate)
         {
+            if (appointmentDate.Hour >= 12 && appointmentDate.Hour < 18)
+            {
+                return true;
+            }
+            return false;
             //TODO: Implement the method as described in the document comments. 
             throw new NotImplementedException("Please implement the (static) Appointment.IsAfternoonAppointment() method");
         }
@@ -84,6 +95,8 @@ namespace BookingUpForBeauty
         /// <exception cref="NotImplementedException"></exception>
         public static string Description(DateTime appointmentDate)
         {
+            
+            return $"You have an appointment on " + { appointmentDate:}
             //TODO: Implement the method as described in the document comments. 
             throw new NotImplementedException("Please implement the (static) Appointment.Description() method");
             // See: https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings

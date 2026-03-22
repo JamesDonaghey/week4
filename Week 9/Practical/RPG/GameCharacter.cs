@@ -47,6 +47,24 @@ namespace RPG
         }
 
 
+        enum CharacterState
+        {
+            Idle,
+            Running,
+            Sleeping,
+            Walking,
+            Defending,
+            Dead
+        }
+
+        //public int foodAmount
+        public int Food
+        {
+            set { _food = value; }
+        }
+
+            
+
         // Class properties
         public string CharacterName
         {
